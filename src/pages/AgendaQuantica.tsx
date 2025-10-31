@@ -47,39 +47,36 @@ export const AgendaQuantica: React.FC = () => {
 
   return (
     <div className="space-y-6 animate-fade-in">
-      <AmoledCard>
-        <h2 className="text-2xl font-bold mb-4 text-primary">Agenda Quântica</h2>
-        <p className="text-muted-foreground mb-6">
-          Use comando de voz para adicionar eventos. Exemplo: "Agendar reunião amanhã às 15h com Cliente B"
-        </p>
-        <div className="h-[600px]">
-          <Calendar
-            localizer={localizer}
-            events={events}
-            startAccessor="start"
-            endAccessor="end"
-            view={view}
-            onView={setView}
-            culture="pt-BR"
-            messages={{
-              next: 'Próximo',
-              previous: 'Anterior',
-              today: 'Hoje',
-              month: 'Mês',
-              week: 'Semana',
-              day: 'Dia',
-              agenda: 'Agenda',
-            }}
-            style={{ height: '100%' }}
-            eventPropGetter={(event) => ({
-              style: {
-                backgroundColor: 'hsl(var(--primary))',
-                borderRadius: '6px',
-                border: 'none',
-                color: 'white',
-              },
-            })}
-          />
+      <AmoledCard variant="glow" className="relative overflow-hidden">
+        {/* Animated holographic background */}
+        <div className="absolute inset-0 holographic opacity-5" />
+        
+        <div className="relative">
+          <h2 className="text-2xl font-bold mb-4 gradient-text-animated neon-glow">Agenda Quântica</h2>
+          <p className="text-muted-foreground mb-6 font-medium">
+            Use comando de voz para adicionar eventos. Exemplo: "Agendar reunião amanhã às 15h com Cliente B"
+          </p>
+          <div className="h-[600px] rounded-xl overflow-hidden">
+            <Calendar
+              localizer={localizer}
+              events={events}
+              startAccessor="start"
+              endAccessor="end"
+              view={view}
+              onView={setView}
+              culture="pt-BR"
+              messages={{
+                next: 'Próximo',
+                previous: 'Anterior',
+                today: 'Hoje',
+                month: 'Mês',
+                week: 'Semana',
+                day: 'Dia',
+                agenda: 'Agenda',
+              }}
+              style={{ height: '100%' }}
+            />
+          </div>
         </div>
       </AmoledCard>
     </div>

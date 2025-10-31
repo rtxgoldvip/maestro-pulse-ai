@@ -89,29 +89,34 @@ export const AnalisesLivres: React.FC = () => {
 
   return (
     <div className="space-y-6 animate-fade-in">
-      <AmoledCard>
-        <div className="space-y-6">
-          {/* Globo Quântico */}
-          <QuantumGlobe isActive={isProcessing} />
+      <AmoledCard variant="glow" className="relative overflow-hidden">
+        {/* Animated background */}
+        <div className="absolute inset-0 holographic opacity-5" />
+        
+        <div className="relative space-y-6">
+          {/* Globo Quântico - Sempre visível quando processando */}
+          <div className="flex justify-center">
+            <QuantumGlobe isActive={isProcessing} />
+          </div>
 
           {/* Chat Messages */}
-          <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+          <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2 scrollbar-hide">
             {messages.map((message, index) => (
-              <div key={index} className={`flex gap-3 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+              <div key={index} className={`flex gap-3 ${message.role === 'user' ? 'justify-end' : 'justify-start'} animate-fade-in`}>
                 {message.role === 'maestro' && (
-                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                    <Bot className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-full glass-effect border-2 border-cyan-500/50 flex items-center justify-center flex-shrink-0 quantum-pulse">
+                    <Bot className="w-5 h-5 text-cyan-400" />
                   </div>
                 )}
                 <div className={`flex-1 ${message.role === 'user' ? 'max-w-[80%]' : 'max-w-full'}`}>
                   <div
-                    className={`p-4 rounded-lg ${
+                    className={`p-4 rounded-xl transition-all duration-300 ${
                       message.role === 'user'
-                        ? 'bg-primary/10 border border-primary/30'
-                        : 'bg-card/50 border border-metallic-light/30'
+                        ? 'glass-effect border-2 border-purple-500/50 shadow-glow-purple'
+                        : 'glass-effect border-2 border-cyan-500/30 shadow-glow'
                     }`}
                   >
-                    <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                    <p className="text-sm whitespace-pre-wrap font-medium">{message.content}</p>
                   </div>
                   {message.chartData && message.chartType && (
                     <div className="mt-4">
@@ -124,8 +129,8 @@ export const AnalisesLivres: React.FC = () => {
                   )}
                 </div>
                 {message.role === 'user' && (
-                  <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
-                    <User className="w-5 h-5 text-accent" />
+                  <div className="w-10 h-10 rounded-full glass-effect border-2 border-purple-500/50 flex items-center justify-center flex-shrink-0">
+                    <User className="w-5 h-5 text-purple-400" />
                   </div>
                 )}
               </div>

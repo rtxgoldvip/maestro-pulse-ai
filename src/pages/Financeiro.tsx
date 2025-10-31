@@ -29,10 +29,10 @@ export const Financeiro: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-6 animate-fade-in pb-20 md:pb-6">
       <FilterBar />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 animate-float">
         <MaestroChart
           data={receberChartData}
           type="pie"
@@ -49,8 +49,8 @@ export const Financeiro: React.FC = () => {
       </div>
 
       {/* Tabela de Contas a Receber */}
-      <AmoledCard>
-        <h3 className="text-lg font-semibold mb-4">Contas a Receber (Últimas 10)</h3>
+      <AmoledCard variant="glow">
+        <h3 className="text-lg font-semibold mb-4 gradient-text-animated">Contas a Receber (Últimas 10)</h3>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -90,8 +90,8 @@ export const Financeiro: React.FC = () => {
       </AmoledCard>
 
       {/* Tabela de Contas a Pagar */}
-      <AmoledCard>
-        <h3 className="text-lg font-semibold mb-4">Contas a Pagar (Últimas 10)</h3>
+      <AmoledCard variant="glow">
+        <h3 className="text-lg font-semibold mb-4 gradient-text-animated">Contas a Pagar (Últimas 10)</h3>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>

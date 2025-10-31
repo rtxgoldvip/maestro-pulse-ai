@@ -29,51 +29,49 @@ export const VisaoGeral: React.FC = () => {
 
   return (
     <div className="space-y-6 animate-fade-in">
-      {/* Filters - Fixed on mobile to not overlap */}
-      <div className="sticky top-[140px] sm:top-[120px] z-30 bg-background/80 backdrop-blur-sm pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
-        <FilterBar />
-      </div>
+      {/* Filters - Now as floating button on mobile */}
+      <FilterBar />
 
       {/* KPIs de Horas - Premium cards with animations */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        <AmoledCard variant="glow">
+        <AmoledCard variant="glow" className="animate-float">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-medium text-slate-600 mb-2">Horas Orçadas</p>
-              <h3 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">
+              <p className="text-sm font-medium text-muted-foreground mb-2">Horas Orçadas</p>
+              <h3 className="text-3xl sm:text-4xl font-bold gradient-text-animated neon-glow">
                 {kpis.horasOrcadas.toFixed(0)}h
               </h3>
             </div>
-            <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-100 to-cyan-200 shadow-lg">
-              <Clock className="w-6 h-6 text-cyan-600" />
+            <div className="p-3 rounded-xl glass-effect border-2 border-cyan-500/30 shadow-glow">
+              <Clock className="w-6 h-6 text-cyan-400" />
             </div>
           </div>
         </AmoledCard>
 
-        <AmoledCard variant="glow">
+        <AmoledCard variant="glow" className="animate-float">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-medium text-slate-600 mb-2">Horas Realizadas</p>
-              <h3 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">
+              <p className="text-sm font-medium text-muted-foreground mb-2">Horas Realizadas</p>
+              <h3 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-purple-500 bg-clip-text text-transparent neon-glow">
                 {kpis.horasRealizadas.toFixed(0)}h
               </h3>
             </div>
-            <div className="p-3 rounded-xl bg-gradient-to-br from-purple-100 to-purple-200 shadow-lg">
-              <Clock className="w-6 h-6 text-purple-600" />
+            <div className="p-3 rounded-xl glass-effect border-2 border-purple-500/30 shadow-glow-purple">
+              <Clock className="w-6 h-6 text-purple-400" />
             </div>
           </div>
         </AmoledCard>
 
-        <AmoledCard variant="glow">
+        <AmoledCard variant="glow" className="animate-float">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-medium text-slate-600 mb-2">% Apontamento</p>
-              <h3 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
+              <p className="text-sm font-medium text-muted-foreground mb-2">% Apontamento</p>
+              <h3 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent neon-glow">
                 {kpis.percentualApontamento.toFixed(1)}%
               </h3>
             </div>
-            <div className="p-3 rounded-xl bg-gradient-to-br from-blue-100 to-blue-200 shadow-lg">
-              <TrendingUp className="w-6 h-6 text-blue-600" />
+            <div className="p-3 rounded-xl glass-effect border-2 border-blue-500/30 shadow-glow">
+              <TrendingUp className="w-6 h-6 text-blue-400" />
             </div>
           </div>
         </AmoledCard>
@@ -84,13 +82,13 @@ export const VisaoGeral: React.FC = () => {
         <AmoledCard>
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-medium text-slate-600 mb-2">Valor Recebido</p>
-              <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-emerald-500 to-green-600 bg-clip-text text-transparent">
+              <p className="text-sm font-medium text-muted-foreground mb-2">Valor Recebido</p>
+              <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent neon-glow">
                 {formatCurrency(financials.valorRecebido)}
               </h3>
             </div>
-            <div className="p-3 rounded-xl bg-gradient-to-br from-emerald-100 to-green-200 shadow-lg">
-              <DollarSign className="w-5 h-5 text-green-600" />
+            <div className="p-3 rounded-xl glass-effect border-2 border-green-500/30 shadow-glow">
+              <DollarSign className="w-5 h-5 text-green-400" />
             </div>
           </div>
         </AmoledCard>
@@ -98,14 +96,14 @@ export const VisaoGeral: React.FC = () => {
         <AmoledCard>
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-medium text-slate-600 mb-2">A Receber</p>
-              <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent">
+              <p className="text-sm font-medium text-muted-foreground mb-2">A Receber</p>
+              <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-500 bg-clip-text text-transparent neon-glow">
                 {formatCurrency(financials.valorAReceber)}
               </h3>
-              <p className="text-xs text-red-500 mt-1">Atraso: {formatCurrency(financials.atrasoReceber)}</p>
+              <p className="text-xs text-red-400 mt-1 font-semibold">Atraso: {formatCurrency(financials.atrasoReceber)}</p>
             </div>
-            <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-100 to-cyan-200 shadow-lg">
-              <TrendingUp className="w-5 h-5 text-cyan-600" />
+            <div className="p-3 rounded-xl glass-effect border-2 border-cyan-500/30 shadow-glow">
+              <TrendingUp className="w-5 h-5 text-cyan-400" />
             </div>
           </div>
         </AmoledCard>
@@ -113,13 +111,13 @@ export const VisaoGeral: React.FC = () => {
         <AmoledCard>
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-medium text-slate-600 mb-2">Valor Pago</p>
-              <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-rose-500 to-red-600 bg-clip-text text-transparent">
+              <p className="text-sm font-medium text-muted-foreground mb-2">Valor Pago</p>
+              <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent neon-glow">
                 {formatCurrency(financials.valorPago)}
               </h3>
             </div>
-            <div className="p-3 rounded-xl bg-gradient-to-br from-rose-100 to-red-200 shadow-lg">
-              <DollarSign className="w-5 h-5 text-red-600" />
+            <div className="p-3 rounded-xl glass-effect border-2 border-red-500/30 shadow-glow">
+              <DollarSign className="w-5 h-5 text-red-400" />
             </div>
           </div>
         </AmoledCard>
@@ -127,42 +125,43 @@ export const VisaoGeral: React.FC = () => {
         <AmoledCard>
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-medium text-slate-600 mb-2">A Pagar</p>
-              <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-orange-500 to-amber-600 bg-clip-text text-transparent">
+              <p className="text-sm font-medium text-muted-foreground mb-2">A Pagar</p>
+              <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent neon-glow">
                 {formatCurrency(financials.valorAPagar)}
               </h3>
-              <p className="text-xs text-red-500 mt-1">Atraso: {formatCurrency(financials.atrasoPagar)}</p>
+              <p className="text-xs text-red-400 mt-1 font-semibold">Atraso: {formatCurrency(financials.atrasoPagar)}</p>
             </div>
-            <div className="p-3 rounded-xl bg-gradient-to-br from-orange-100 to-amber-200 shadow-lg">
-              <TrendingDown className="w-5 h-5 text-orange-600" />
+            <div className="p-3 rounded-xl glass-effect border-2 border-orange-500/30 shadow-glow">
+              <TrendingDown className="w-5 h-5 text-orange-400" />
             </div>
           </div>
         </AmoledCard>
       </div>
 
       {/* Fluxo de Caixa - Hero card */}
-      <AmoledCard variant="glow">
-        <div className="text-center py-8 sm:py-12">
-          <p className="text-base sm:text-lg font-medium text-slate-600 mb-3">Fluxo de Caixa do Mês</p>
+      <AmoledCard variant="glow" className="relative overflow-hidden">
+        <div className="absolute inset-0 holographic opacity-10" />
+        <div className="relative text-center py-8 sm:py-12">
+          <p className="text-base sm:text-lg font-semibold text-muted-foreground mb-3">Fluxo de Caixa do Mês</p>
           <h2
             className={`text-4xl sm:text-6xl font-bold ${
               financials.fluxoCaixaMes >= 0 
-                ? 'bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent' 
-                : 'bg-gradient-to-r from-red-500 to-rose-600 bg-clip-text text-transparent'
+                ? 'bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent neon-glow' 
+                : 'bg-gradient-to-r from-red-400 to-rose-500 bg-clip-text text-transparent neon-glow'
             }`}
           >
             {formatCurrency(financials.fluxoCaixaMes)}
           </h2>
-          <div className={`mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full ${
-            financials.fluxoCaixaMes >= 0 ? 'bg-green-100' : 'bg-red-100'
+          <div className={`mt-4 inline-flex items-center gap-2 px-6 py-3 rounded-full glass-effect border-2 ${
+            financials.fluxoCaixaMes >= 0 ? 'border-green-500/50 shadow-glow' : 'border-red-500/50 shadow-glow'
           }`}>
             {financials.fluxoCaixaMes >= 0 ? (
-              <TrendingUp className="w-4 h-4 text-green-600" />
+              <TrendingUp className="w-5 h-5 text-green-400" />
             ) : (
-              <TrendingDown className="w-4 h-4 text-red-600" />
+              <TrendingDown className="w-5 h-5 text-red-400" />
             )}
-            <span className={`text-sm font-medium ${
-              financials.fluxoCaixaMes >= 0 ? 'text-green-700' : 'text-red-700'
+            <span className={`text-sm font-bold ${
+              financials.fluxoCaixaMes >= 0 ? 'text-green-400' : 'text-red-400'
             }`}>
               {financials.fluxoCaixaMes >= 0 ? 'Positivo' : 'Negativo'}
             </span>

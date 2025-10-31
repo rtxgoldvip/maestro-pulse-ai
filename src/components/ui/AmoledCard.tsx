@@ -11,30 +11,33 @@ export const AmoledCard: React.FC<AmoledCardProps> = ({ children, className, var
   return (
     <div
       className={cn(
-        'relative overflow-hidden rounded-xl p-6 transition-all duration-500 group',
-        // Glass morphism base
-        'bg-gradient-to-br from-white/90 via-white/70 to-white/50 backdrop-blur-xl',
-        // Metallic border effect
-        'border border-transparent',
-        'before:absolute before:inset-0 before:rounded-xl before:p-[1px]',
-        'before:bg-gradient-to-br before:from-slate-300 before:via-slate-200 before:to-slate-300',
+        'relative overflow-hidden rounded-2xl p-6 transition-all duration-500 group card-3d',
+        // Premium glass morphism for dark theme
+        'glass-effect',
+        // Neon border with glow
+        'border-2 border-transparent',
+        'before:absolute before:inset-0 before:rounded-2xl before:p-[2px]',
+        'before:bg-gradient-to-br before:from-cyan-500/50 before:via-purple-500/50 before:to-blue-500/50',
         'before:-z-10 before:transition-all before:duration-500',
-        // Premium shadow with depth
-        'shadow-[0_8px_32px_rgba(0,191,255,0.12),0_2px_8px_rgba(100,149,237,0.08)]',
-        // Hover effects for interactivity
-        'hover:shadow-[0_12px_48px_rgba(0,191,255,0.18),0_4px_16px_rgba(100,149,237,0.12)]',
-        'hover:before:from-cyan-200 hover:before:via-purple-200 hover:before:to-blue-200',
-        'hover:-translate-y-1',
-        // Glow variant
-        variant === 'glow' && 'quantum-pulse',
+        // Premium shadow with neon glow
+        'shadow-amoled',
+        // Hover effects - 3D and glow
+        'hover:shadow-float hover:scale-[1.02]',
+        'hover:before:from-cyan-400 hover:before:via-purple-400 hover:before:to-blue-400',
+        'hover:border-cyan-500/50',
+        // Glow variant with pulse animation
+        variant === 'glow' && 'quantum-pulse shadow-glow',
         className
       )}
-      style={{
-        background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.85) 100%)',
-      }}
     >
+      {/* Animated gradient overlay */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/10 via-purple-500/5 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      
       {/* Inner glow effect */}
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      <div className="absolute inset-0 rounded-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-32 h-32 bg-cyan-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl" />
+      </div>
       
       {/* Content */}
       <div className="relative z-10">

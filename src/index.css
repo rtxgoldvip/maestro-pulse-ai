@@ -4,99 +4,74 @@
 
 @layer base {
   :root {
-    /* Base colors - Professional light theme */
-    --background: 0 0% 98%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark AMOLED Base - Premium Dark Theme */
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
     
-    /* Card with glass effect */
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card with deep glass effect */
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
     
-    /* Quantum Cyan Primary */
+    /* Vibrant Quantum Cyan Primary */
     --primary: 195 100% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 222 47% 11%;
     
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 270 70% 60%;
+    --secondary-foreground: 210 40% 98%;
     
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 222 47% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
     
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 270 70% 60%;
+    --accent-foreground: 210 40% 98%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 222 47% 18%;
+    --input: 222 47% 15%;
     --ring: 195 100% 50%;
-    --radius: 0.75rem;
+    --radius: 1rem;
     
-    /* Quantum Color Palette */
+    /* Vibrant Quantum Color Palette - Neon Effect */
     --quantum-cyan: 195 100% 50%;
     --quantum-purple: 270 70% 60%;
     --quantum-blue: 220 90% 56%;
-    --quantum-lime: 80 80% 50%;
-    --quantum-pink: 330 80% 60%;
+    --quantum-lime: 80 90% 55%;
+    --quantum-pink: 330 85% 65%;
+    --quantum-orange: 25 95% 60%;
+    --quantum-green: 140 80% 50%;
     
-    /* Metallic Effects */
-    --metallic-light: 210 20% 85%;
-    --metallic-medium: 210 15% 70%;
-    --metallic-dark: 210 15% 55%;
+    /* Metallic Effects for borders */
+    --metallic-light: 210 20% 25%;
+    --metallic-medium: 210 15% 20%;
+    --metallic-dark: 210 15% 15%;
     
-    /* Gradients */
+    /* Advanced Gradients */
     --gradient-quantum: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(270 70% 60%) 50%, hsl(220 90% 56%) 100%);
-    --gradient-metallic: linear-gradient(145deg, hsl(210 20% 92%) 0%, hsl(210 15% 85%) 50%, hsl(210 20% 92%) 100%);
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(195 100% 50% / 0.2) 0%, transparent 70%);
+    --gradient-quantum-reverse: linear-gradient(225deg, hsl(195 100% 50%) 0%, hsl(270 70% 60%) 50%, hsl(220 90% 56%) 100%);
+    --gradient-metallic: linear-gradient(145deg, hsl(210 20% 25%) 0%, hsl(210 15% 20%) 50%, hsl(210 20% 25%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(195 100% 50% / 0.3) 0%, transparent 70%);
+    --gradient-neon: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(330 85% 65%) 50%, hsl(270 70% 60%) 100%);
     
-    /* Shadows for depth */
-    --shadow-amoled: 0 8px 32px hsl(195 100% 50% / 0.12), 0 2px 8px hsl(220 90% 56% / 0.08);
-    --shadow-float: 0 12px 40px hsl(195 100% 50% / 0.15), 0 4px 12px hsl(220 90% 56% / 0.1);
-    --shadow-glow: 0 0 20px hsl(195 100% 50% / 0.3), 0 0 40px hsl(195 100% 50% / 0.15);
+    /* Premium Shadows with glow */
+    --shadow-amoled: 0 8px 32px hsl(195 100% 50% / 0.25), 0 2px 8px hsl(220 90% 56% / 0.15);
+    --shadow-float: 0 12px 48px hsl(195 100% 50% / 0.3), 0 4px 16px hsl(220 90% 56% / 0.2);
+    --shadow-glow: 0 0 30px hsl(195 100% 50% / 0.5), 0 0 60px hsl(195 100% 50% / 0.25);
+    --shadow-glow-purple: 0 0 30px hsl(270 70% 60% / 0.5), 0 0 60px hsl(270 70% 60% / 0.25);
+    --shadow-neon: 0 0 20px hsl(195 100% 50% / 0.6), 0 0 40px hsl(270 70% 60% / 0.4), 0 0 60px hsl(220 90% 56% / 0.3);
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 195 100% 50%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 195 100% 50%;
-
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 195 100% 50%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 47% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 195 100% 50%;
   }
 }
 
@@ -111,31 +86,38 @@
 }
 
 @layer utilities {
-  /* Glass morphism effect */
+  /* Premium glass morphism with dark theme */
   .glass-effect {
     background: linear-gradient(
       135deg,
-      hsl(0 0% 100% / 0.7) 0%,
-      hsl(0 0% 100% / 0.4) 100%
+      hsl(222 47% 11% / 0.8) 0%,
+      hsl(222 47% 11% / 0.5) 100%
     );
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(195 100% 50% / 0.1);
   }
   
-  /* Metallic border effect */
+  /* Neon border effect */
+  .neon-border {
+    border: 2px solid hsl(195 100% 50%);
+    box-shadow: 0 0 10px hsl(195 100% 50% / 0.5), 
+                inset 0 0 10px hsl(195 100% 50% / 0.2);
+  }
+  
+  /* Metallic border with glow */
   .metallic-border {
-    border: 1px solid;
-    border-image: var(--gradient-metallic) 1;
-    border-radius: var(--radius);
+    border: 1px solid hsl(210 20% 25%);
+    box-shadow: 0 0 20px hsl(195 100% 50% / 0.2);
   }
   
-  /* Quantum glow animation */
+  /* Quantum glow animation - Enhanced */
   @keyframes quantum-pulse {
     0%, 100% {
-      box-shadow: 0 0 20px hsl(195 100% 50% / 0.3);
+      box-shadow: 0 0 30px hsl(195 100% 50% / 0.4), 0 0 60px hsl(195 100% 50% / 0.2);
     }
     50% {
-      box-shadow: 0 0 40px hsl(195 100% 50% / 0.6), 0 0 60px hsl(270 70% 60% / 0.3);
+      box-shadow: 0 0 50px hsl(195 100% 50% / 0.8), 0 0 100px hsl(270 70% 60% / 0.5), 0 0 150px hsl(220 90% 56% / 0.3);
     }
   }
   
@@ -143,9 +125,53 @@
     animation: quantum-pulse 3s ease-in-out infinite;
   }
   
-  /* Gradient text */
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Holographic shimmer */
+  @keyframes holographic {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .holographic {
+    background: linear-gradient(
+      135deg,
+      hsl(195 100% 50%) 0%,
+      hsl(270 70% 60%) 25%,
+      hsl(220 90% 56%) 50%,
+      hsl(330 85% 65%) 75%,
+      hsl(195 100% 50%) 100%
+    );
+    background-size: 200% 200%;
+    animation: holographic 5s ease infinite;
+  }
+  
+  /* Gradient text with animation */
   .gradient-text {
     background: var(--gradient-quantum);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-text-animated {
+    background: linear-gradient(
+      135deg,
+      hsl(195 100% 50%) 0%,
+      hsl(270 70% 60%) 50%,
+      hsl(220 90% 56%) 100%
+    );
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -169,43 +195,129 @@
     background-size: 200% 200%;
     animation: gradient-shift 3s ease infinite;
   }
+  
+  /* 3D Perspective card */
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .card-3d:hover {
+    transform: rotateX(5deg) rotateY(5deg) translateY(-5px);
+  }
+  
+  /* Neon glow text */
+  .neon-glow {
+    text-shadow: 0 0 10px hsl(195 100% 50%), 
+                 0 0 20px hsl(195 100% 50% / 0.8),
+                 0 0 30px hsl(195 100% 50% / 0.6);
+  }
 }
 
-/* React Big Calendar Custom Styles */
+/* React Big Calendar Custom Styles - Premium Dark Theme */
 .rbc-calendar {
   font-family: inherit;
   background: transparent;
+  color: hsl(var(--foreground));
 }
 
 .rbc-header {
-  padding: 10px 3px;
+  padding: 12px 6px;
   font-weight: 600;
+  font-size: 0.875rem;
   color: hsl(var(--foreground));
-  border-bottom: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  border-bottom: 2px solid hsl(195 100% 50% / 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .rbc-today {
-  background-color: hsl(var(--primary) / 0.1);
+  background-color: hsl(195 100% 50% / 0.15);
+}
+
+.rbc-off-range-bg {
+  background: hsl(var(--muted) / 0.3);
+}
+
+.rbc-date-cell {
+  padding: 8px;
+  font-weight: 500;
 }
 
 .rbc-event {
-  background-color: hsl(var(--primary));
-  border-radius: 4px;
-  padding: 2px 5px;
+  background: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(270 70% 60%) 100%);
+  border-radius: 8px;
+  padding: 4px 8px;
+  border: none;
+  box-shadow: 0 2px 8px hsl(195 100% 50% / 0.3), 0 4px 16px hsl(270 70% 60% / 0.2);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.rbc-event:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px hsl(195 100% 50% / 0.5), 0 8px 24px hsl(270 70% 60% / 0.3);
+}
+
+.rbc-event-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.rbc-toolbar {
+  padding: 16px;
+  background: hsl(var(--card));
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border: 1px solid hsl(var(--border));
 }
 
 .rbc-toolbar button {
   color: hsl(var(--foreground));
-  border: 1px solid hsl(var(--border));
+  border: 1px solid hsl(195 100% 50% / 0.3);
   background: hsl(var(--background));
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .rbc-toolbar button:hover {
-  background: hsl(var(--accent));
-  color: hsl(var(--accent-foreground));
+  background: hsl(195 100% 50% / 0.2);
+  border-color: hsl(195 100% 50%);
+  color: hsl(195 100% 50%);
+  box-shadow: 0 0 15px hsl(195 100% 50% / 0.3);
 }
 
 .rbc-toolbar button.rbc-active {
-  background: hsl(var(--primary));
+  background: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(270 70% 60%) 100%);
   color: hsl(var(--primary-foreground));
+  border: none;
+  box-shadow: 0 4px 12px hsl(195 100% 50% / 0.4);
+}
+
+.rbc-month-view, .rbc-time-view, .rbc-agenda-view {
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  overflow: hidden;
+  background: hsl(var(--card) / 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.rbc-time-slot {
+  border-top: 1px solid hsl(var(--border) / 0.5);
+}
+
+.rbc-day-slot .rbc-time-slot {
+  border-top: 1px solid hsl(var(--border) / 0.3);
+}
+
+.rbc-time-header-content {
+  border-left: 1px solid hsl(var(--border));
+}
+
+.rbc-current-time-indicator {
+  background-color: hsl(195 100% 50%);
+  height: 2px;
 }
