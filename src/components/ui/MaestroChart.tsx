@@ -40,25 +40,48 @@ export const MaestroChart: React.FC<MaestroChartProps> = ({ data, type, title, d
         return (
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
+              <defs>
+                {COLORS.map((color, index) => (
+                  <linearGradient key={`gradient-${index}`} id={`gradient-${index}`} x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor={color} stopOpacity={0.9} />
+                    <stop offset="100%" stopColor={color} stopOpacity={0.6} />
+                  </linearGradient>
+                ))}
+              </defs>
               <Pie
                 data={data}
                 cx="50%"
                 cy="50%"
-                labelLine={false}
+                labelLine={{
+                  stroke: 'hsl(var(--foreground) / 0.3)',
+                  strokeWidth: 1.5,
+                }}
                 label={(entry) => entry.name}
-                outerRadius={100}
+                outerRadius={110}
+                innerRadius={40}
                 fill="hsl(var(--primary))"
                 dataKey={dataKey}
+                stroke="white"
+                strokeWidth={3}
               >
                 {data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  <Cell 
+                    key={`cell-${index}`} 
+                    fill={`url(#gradient-${index % COLORS.length})`}
+                    style={{
+                      filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))',
+                      transition: 'all 0.3s ease',
+                    }}
+                  />
                 ))}
               </Pie>
               <Tooltip
                 contentStyle={{
-                  backgroundColor: 'hsl(var(--card))',
-                  border: '1px solid hsl(var(--border))',
-                  borderRadius: '8px',
+                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                  border: '1px solid rgba(0, 191, 255, 0.3)',
+                  borderRadius: '12px',
+                  backdropFilter: 'blur(8px)',
+                  boxShadow: '0 8px 32px rgba(0, 191, 255, 0.15)',
                 }}
               />
             </PieChart>
