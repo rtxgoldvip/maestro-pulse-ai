@@ -42,22 +42,24 @@ export const QuantumGlobe: React.FC<QuantumGlobeProps> = ({ isActive }) => {
       );
     }
 
-    // Create particles
+    // Create VIBRANT particles with glow
     const particlesGeometry = new THREE.BufferGeometry().setFromPoints(points);
     const particlesMaterial = new THREE.PointsMaterial({
-      color: 0x00BFFF,
-      size: 0.05,
+      color: 0x00FFFF, // Bright cyan
+      size: 0.08,
       transparent: true,
-      opacity: 0.8,
+      opacity: 1,
+      blending: THREE.AdditiveBlending,
     });
     const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
     scene.add(particlesMesh);
 
-    // Create connecting lines
+    // Create VIBRANT connecting lines with glow
     const linesMaterial = new THREE.LineBasicMaterial({
-      color: 0x00BFFF,
+      color: 0xFF00FF, // Magenta for contrast
       transparent: true,
-      opacity: 0.3,
+      opacity: 0.6,
+      blending: THREE.AdditiveBlending,
     });
 
     const linesGeometry = new THREE.BufferGeometry();
@@ -110,11 +112,27 @@ export const QuantumGlobe: React.FC<QuantumGlobeProps> = ({ isActive }) => {
   if (!isActive) return null;
 
   return (
-    <div className="flex justify-center items-center py-8">
-      <div
-        ref={containerRef}
-        className="rounded-full overflow-hidden shadow-[0_0_40px_rgba(0,191,255,0.3)]"
-      />
+    <div className="flex justify-center items-center py-4">
+      <div className="relative">
+        {/* Chrome ring effect */}
+        <div className="absolute inset-0 rounded-full blur-md" 
+             style={{
+               background: 'linear-gradient(145deg, rgba(255,255,255,0.8) 0%, rgba(0,255,255,0.8) 25%, rgba(255,255,255,0.9) 50%, rgba(255,0,255,0.8) 75%, rgba(255,255,255,0.8) 100%)',
+               animation: 'spin 4s linear infinite'
+             }} 
+        />
+        {/* Inner glow */}
+        <div className="absolute inset-2 rounded-full bg-gradient-to-br from-cyan-500/30 via-purple-500/30 to-blue-500/30 blur-xl" />
+        {/* Globe container */}
+        <div
+          ref={containerRef}
+          className="relative rounded-full overflow-hidden border-4 border-transparent"
+          style={{
+            background: 'linear-gradient(145deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(255,255,255,0.1) 100%)',
+            boxShadow: '0 0 60px rgba(0,255,255,0.8), 0 0 100px rgba(255,0,255,0.6), inset 0 0 40px rgba(0,255,255,0.3)'
+          }}
+        />
+      </div>
     </div>
   );
 };

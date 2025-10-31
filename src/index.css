@@ -4,65 +4,69 @@
 
 @layer base {
   :root {
-    /* Dark AMOLED Base - Premium Dark Theme */
-    --background: 222 47% 8%;
-    --foreground: 210 40% 98%;
+    /* Ultra Dark AMOLED Base - Maximum Contrast */
+    --background: 222 47% 4%;
+    --foreground: 0 0% 100%;
     
-    /* Card with deep glass effect */
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
+    /* Deep glass cards */
+    --card: 222 47% 8%;
+    --card-foreground: 0 0% 100%;
     
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 0 0% 100%;
     
-    /* Vibrant Quantum Cyan Primary */
-    --primary: 195 100% 50%;
-    --primary-foreground: 222 47% 11%;
+    /* Neon Cyan Primary - Maximum Vibrancy */
+    --primary: 180 100% 50%;
+    --primary-foreground: 222 47% 4%;
     
-    --secondary: 270 70% 60%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 280 100% 70%;
+    --secondary-foreground: 0 0% 100%;
     
-    --muted: 222 47% 15%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 222 47% 12%;
+    --muted-foreground: 0 0% 70%;
     
-    --accent: 270 70% 60%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 280 100% 70%;
+    --accent-foreground: 0 0% 100%;
     
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 100%;
     
-    --border: 222 47% 18%;
-    --input: 222 47% 15%;
-    --ring: 195 100% 50%;
-    --radius: 1rem;
+    --border: 222 47% 15%;
+    --input: 222 47% 10%;
+    --ring: 180 100% 50%;
+    --radius: 1.5rem;
     
-    /* Vibrant Quantum Color Palette - Neon Effect */
-    --quantum-cyan: 195 100% 50%;
-    --quantum-purple: 270 70% 60%;
-    --quantum-blue: 220 90% 56%;
-    --quantum-lime: 80 90% 55%;
-    --quantum-pink: 330 85% 65%;
-    --quantum-orange: 25 95% 60%;
-    --quantum-green: 140 80% 50%;
+    /* MAXIMUM Vibrant Quantum Neon Palette */
+    --quantum-cyan: 180 100% 50%;
+    --quantum-purple: 280 100% 70%;
+    --quantum-blue: 220 100% 60%;
+    --quantum-lime: 80 100% 50%;
+    --quantum-pink: 330 100% 70%;
+    --quantum-orange: 25 100% 60%;
+    --quantum-green: 140 100% 50%;
+    --quantum-gold: 45 100% 60%;
     
     /* Metallic Effects for borders */
     --metallic-light: 210 20% 25%;
     --metallic-medium: 210 15% 20%;
     --metallic-dark: 210 15% 15%;
     
-    /* Advanced Gradients */
-    --gradient-quantum: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(270 70% 60%) 50%, hsl(220 90% 56%) 100%);
-    --gradient-quantum-reverse: linear-gradient(225deg, hsl(195 100% 50%) 0%, hsl(270 70% 60%) 50%, hsl(220 90% 56%) 100%);
-    --gradient-metallic: linear-gradient(145deg, hsl(210 20% 25%) 0%, hsl(210 15% 20%) 50%, hsl(210 20% 25%) 100%);
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(195 100% 50% / 0.3) 0%, transparent 70%);
-    --gradient-neon: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(330 85% 65%) 50%, hsl(270 70% 60%) 100%);
+    /* Ultra Vibrant Gradients with Chrome Effect */
+    --gradient-quantum: linear-gradient(135deg, hsl(180 100% 50%) 0%, hsl(280 100% 70%) 50%, hsl(220 100% 60%) 100%);
+    --gradient-quantum-reverse: linear-gradient(225deg, hsl(180 100% 50%) 0%, hsl(280 100% 70%) 50%, hsl(220 100% 60%) 100%);
+    --gradient-chrome: linear-gradient(145deg, hsl(0 0% 80%) 0%, hsl(0 0% 90%) 25%, hsl(180 100% 50%) 50%, hsl(0 0% 90%) 75%, hsl(0 0% 80%) 100%);
+    --gradient-metallic: linear-gradient(145deg, hsl(210 30% 35%) 0%, hsl(210 20% 25%) 25%, hsl(180 100% 50% / 0.3) 50%, hsl(210 20% 25%) 75%, hsl(210 30% 35%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(180 100% 50% / 0.5) 0%, transparent 70%);
+    --gradient-neon: linear-gradient(135deg, hsl(180 100% 50%) 0%, hsl(330 100% 70%) 50%, hsl(280 100% 70%) 100%);
+    --gradient-rainbow: linear-gradient(135deg, hsl(180 100% 50%) 0%, hsl(280 100% 70%) 20%, hsl(330 100% 70%) 40%, hsl(45 100% 60%) 60%, hsl(140 100% 50%) 80%, hsl(220 100% 60%) 100%);
     
-    /* Premium Shadows with glow */
-    --shadow-amoled: 0 8px 32px hsl(195 100% 50% / 0.25), 0 2px 8px hsl(220 90% 56% / 0.15);
-    --shadow-float: 0 12px 48px hsl(195 100% 50% / 0.3), 0 4px 16px hsl(220 90% 56% / 0.2);
-    --shadow-glow: 0 0 30px hsl(195 100% 50% / 0.5), 0 0 60px hsl(195 100% 50% / 0.25);
-    --shadow-glow-purple: 0 0 30px hsl(270 70% 60% / 0.5), 0 0 60px hsl(270 70% 60% / 0.25);
-    --shadow-neon: 0 0 20px hsl(195 100% 50% / 0.6), 0 0 40px hsl(270 70% 60% / 0.4), 0 0 60px hsl(220 90% 56% / 0.3);
+    /* EXTREME Shadows with intense glow */
+    --shadow-amoled: 0 10px 40px hsl(180 100% 50% / 0.4), 0 4px 16px hsl(220 100% 60% / 0.3), 0 0 80px hsl(180 100% 50% / 0.2);
+    --shadow-float: 0 20px 60px hsl(180 100% 50% / 0.5), 0 8px 32px hsl(220 100% 60% / 0.4);
+    --shadow-glow: 0 0 40px hsl(180 100% 50% / 0.8), 0 0 80px hsl(180 100% 50% / 0.5), 0 0 120px hsl(180 100% 50% / 0.3);
+    --shadow-glow-purple: 0 0 40px hsl(280 100% 70% / 0.8), 0 0 80px hsl(280 100% 70% / 0.5), 0 0 120px hsl(280 100% 70% / 0.3);
+    --shadow-neon: 0 0 30px hsl(180 100% 50% / 0.9), 0 0 60px hsl(280 100% 70% / 0.6), 0 0 90px hsl(220 100% 60% / 0.4);
+    --shadow-chrome: 0 0 20px hsl(0 0% 100% / 0.5), 0 10px 40px hsl(180 100% 50% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.3);
 
     --sidebar-background: 222 47% 8%;
     --sidebar-foreground: 210 40% 98%;
@@ -98,11 +102,21 @@
     border: 1px solid hsl(195 100% 50% / 0.1);
   }
   
-  /* Neon border effect */
+  /* Ultra Neon border with chrome effect */
   .neon-border {
-    border: 2px solid hsl(195 100% 50%);
-    box-shadow: 0 0 10px hsl(195 100% 50% / 0.5), 
-                inset 0 0 10px hsl(195 100% 50% / 0.2);
+    border: 3px solid hsl(180 100% 50%);
+    box-shadow: 0 0 20px hsl(180 100% 50% / 0.8), 
+                0 0 40px hsl(180 100% 50% / 0.5),
+                inset 0 0 20px hsl(180 100% 50% / 0.3),
+                inset 0 2px 0 hsl(0 0% 100% / 0.5);
+  }
+  
+  /* Chrome border effect */
+  .chrome-border {
+    border: 2px solid transparent;
+    background: var(--gradient-chrome) border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: var(--shadow-chrome);
   }
   
   /* Metallic border with glow */
@@ -111,18 +125,36 @@
     box-shadow: 0 0 20px hsl(195 100% 50% / 0.2);
   }
   
-  /* Quantum glow animation - Enhanced */
+  /* INTENSE Quantum glow animation */
   @keyframes quantum-pulse {
     0%, 100% {
-      box-shadow: 0 0 30px hsl(195 100% 50% / 0.4), 0 0 60px hsl(195 100% 50% / 0.2);
+      box-shadow: 0 0 40px hsl(180 100% 50% / 0.6), 0 0 80px hsl(180 100% 50% / 0.4), 0 0 120px hsl(180 100% 50% / 0.2);
+      transform: scale(1);
     }
     50% {
-      box-shadow: 0 0 50px hsl(195 100% 50% / 0.8), 0 0 100px hsl(270 70% 60% / 0.5), 0 0 150px hsl(220 90% 56% / 0.3);
+      box-shadow: 0 0 60px hsl(180 100% 50% / 1), 0 0 120px hsl(280 100% 70% / 0.8), 0 0 180px hsl(220 100% 60% / 0.6);
+      transform: scale(1.02);
     }
   }
   
   .quantum-pulse {
-    animation: quantum-pulse 3s ease-in-out infinite;
+    animation: quantum-pulse 2s ease-in-out infinite;
+  }
+  
+  /* Intense pulse for key elements */
+  @keyframes pulse-intense {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.1);
+    }
+  }
+  
+  .pulse-intense {
+    animation: pulse-intense 1.5s ease-in-out infinite;
   }
   
   /* Floating animation */
