@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, momentLocalizer, View } from 'react-big-calendar';
+import { Calendar, dateFnsLocalizer, View } from 'react-big-calendar';
 import { format, parse, startOfWeek, getDay } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -10,13 +10,13 @@ const locales = {
   'pt-BR': ptBR,
 };
 
-const localizer = momentLocalizer({
+const localizer = dateFnsLocalizer({
   format,
   parse,
   startOfWeek,
   getDay,
   locales,
-} as any);
+});
 
 export const AgendaQuantica: React.FC = () => {
   const [events, setEvents] = useState<AgendaSimulada[]>([
